@@ -22,10 +22,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, onMounted, watch, ref, PropType } from 'vue'
+import { defineComponent, computed, onMounted, watch, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useStore } from 'vuex'
-import { GlobalDataProps, ColumnProps, UserProps } from '../store'
+import { GlobalDataProps, ColumnProps } from '../store'
 import PostList from '../components/PostList.vue'
 import { addColumnAvatar } from '../helper'
 import useLoadMore from '../hooks/useLoadMore'
