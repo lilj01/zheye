@@ -207,10 +207,9 @@ const store = createStore<GlobalDataProps>({
     updateUser ({ commit }, { id, payload }) {
       return asyncAndCommit(`/user/${id}`, 'updateUser', commit, { method: 'patch', data: payload })
     },
-    loginAndFetch ({ dispatch }, loginData) {
-      return dispatch('login', loginData).then(() => {
-        return dispatch('fetchCurrentUser')
-      })
+    async loginAndFetch ({ dispatch }, loginData) {
+      await dispatch('login', loginData)
+      return await dispatch('fetchCurrentUser')
     }
   },
   getters: {
